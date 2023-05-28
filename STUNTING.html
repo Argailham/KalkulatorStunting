@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* Gaya CSS untuk tampilan web */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Kalkulator Perhitungan Stunting Balita</h2>
+
+    <div class="input-group">
+        <label for="umur">Umur (bulan):</label>
+        <input type="text" id="umur">
+    </div>
+
+    <div class="input-group">
+        <label for="bb_lahir">Berat Badan Lahir (kg):</label>
+        <input type="text" id="bb_lahir">
+    </div>
+
+    <div class="input-group">
+        <label for="bb">Berat Badan (kg):</label>
+        <input type="text" id="bb">
+    </div>
+
+    <div class="input-group">
+        <label for="tb">Tinggi Badan (cm):</label>
+        <input type="text" id="tb">
+    </div>
+
+    <button onclick="hitungStunting()">Hitung Stunting</button>
+
+    <div class="result">
+        Hasil: <span id="hasil"></span>
+    </div>
+
+    <script>
+        function hitungStunting() {
+            var umur = parseFloat(document.getElementById('umur').value);
+            var bb_lahir = parseFloat(document.getElementById('bb_lahir').value.replace(",", "."));
+            var bb = parseFloat(document.getElementById('bb').value.replace(",", "."));
+            var tb = parseFloat(document.getElementById('tb').value.replace(",", "."));
+
+            // Lakukan perhitungan stunting berdasarkan atribut yang diberikan
+
+            // Contoh perhitungan sederhana: Jika tinggi badan di bawah 2 standar deviasi, maka dianggap stunting
+            var sd = 2; // Standar deviasi
+            var tinggi_rata = 70; // Contoh tinggi badan rata-rata
+            var tinggi_sd = sd * 5; // Contoh tinggi badan standar deviasi
+            var tinggi_bawah = tinggi_rata - tinggi_sd;
+
+            var hasil = "";
+            if (tb < tinggi_bawah) {
+                hasil = "Stunting";
+            } else {
+                hasil = "Normal";
+            }
+
+            // Tampilkan hasil pada elemen dengan id 'hasil'
+            document.getElementById('hasil').innerHTML = hasil;
+        }
+    </script>
+</body>
+</html>
