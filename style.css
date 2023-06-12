@@ -6,7 +6,7 @@ body {
     background-color: #f2f2f2;
 }
 
-h1 {
+h2 {
     text-align: center;
     color: #333;
 }
@@ -24,22 +24,26 @@ h1 {
 }
 
 .input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-bottom: 20px;
 }
 
-label {
-    display: block;
+.input-group label {
+    text-align: center;
     font-weight: bold;
     margin-bottom: 5px;
     color: #333;
 }
 
-input[type="text"] {
+.input-group input[type="text"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
+    text-align: center;
 }
 
 button {
@@ -56,6 +60,14 @@ button {
     margin-top: 20px;
     font-weight: bold;
     text-align: center;
+}
+
+.result.stunting {
+    color: red;
+}
+
+.result.normal {
+    color: green;
 }
 
 /* Breakpoints untuk perangkat mobile dan tablet */
