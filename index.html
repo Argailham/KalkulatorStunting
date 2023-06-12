@@ -65,11 +65,15 @@
         <input type="text" id="tb">
     </div>
 
-    <button onclick="hitungStunting()">Hitung Stunting</button>
-
-    <div class="result">
-        Hasil: <span id="hasil"></span>
     </div>
+        </div>
+        <button onclick="hitungStunting()">Hitung</button>
+        <button onclick="resetForm()">Hapus</button>
+        <div class="result" id="result"></div>
+    </div>
+    </div>
+
+   
 
     <script>
         function hitungStunting() {
@@ -94,7 +98,17 @@
             }
 
             // Tampilkan hasil pada elemen dengan id 'hasil'
-            document.getElementById('hasil').innerHTML = hasil;
+            document.getElementById("result").innerText = "Hasil perhitungan...";
+         function resetForm() {
+            // Mereset nilai inputan
+            document.getElementById("umur").value = "";
+            document.getElementById("bb_lahir").value = "";
+            document.getElementById("bb").value = "";
+            document.getElementById("tb").value = "";
+
+            // Menghapus hasil perhitungan
+            document.getElementById("result").innerText = "";
+        }
         }
     </script>
 </body>
